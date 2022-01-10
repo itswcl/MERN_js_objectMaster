@@ -23,3 +23,35 @@ const pokemon = Object.freeze([
     { "id": 146, "name": "Moltres",    "types": ["fire", "flying"] },
     { "id": 148, "name": "Dragonair",  "types": ["dragon"] }
 ]);
+
+const bListPkmn = pokemon.filter( p => p.name[0] === "B");
+// console.log(bListPkmn);
+
+const pkmnIds = pokemon.map( p => p.id );
+// console.log(pkmnIds);
+
+const pkmnIdsDivideByThree = pokemon.filter( p => p.id % 3 === 0 );
+// console.log(pkmnIdsDivideByThree)
+
+const pkmnTypeFire = pokemon.filter( p => p.types.includes("fire"))
+// console.log(pkmnTypeFire);
+
+const pkmnMoreThanOneType = pokemon.filter( p => p.types.length > 1 )
+// console.log(pkmnMoreThanOneType);
+
+const pkmnNames = pokemon.map( p => p.name);
+// console.log(pkmnNames)
+
+const pkmnNamesIdOver99 = pokemon.filter( p => p.id > 99).map( p => p.name);
+// console.log(pkmnNamesIdOver99)
+
+const pkmnTypePoison = pokemon.filter( p => {
+    return p.types.length === 1 && p.types.includes('poison')
+}).map(p => p.name)
+// console.log(pkmnTypePoison)
+
+const pkmnTypeSecondFly = pokemon.filter( p => p.types[1] === 'flying')
+// console.log(pkmnTypeSecondFly)
+
+const pkmnCountTypeNormal = pokemon.filter(p => p.types.indexOf('normal') > -1).length;
+// console.log(pkmnCountTypeNormal);
